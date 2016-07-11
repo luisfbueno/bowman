@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0)) //Pega a posição do primeiro click do mouse
         {
-            Camera gameCamera = FindObjectOfType<Camera>();
             startingMousePosition = GetMousePosition();
             pressed = true;
         }
@@ -46,8 +45,7 @@ public class PlayerController : MonoBehaviour
 
     Vector2 GetMousePosition () //Função para pegar a posição do mouse no atual momento e converter de pixes para posição global
     {
-        Camera gameCamera = FindObjectOfType<Camera>();
-        return gameCamera.ScreenToWorldPoint(Input.mousePosition);
+        return FindObjectOfType<Camera>().ScreenToWorldPoint(Input.mousePosition);
     }
 
 }
