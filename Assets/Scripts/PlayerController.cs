@@ -5,7 +5,6 @@ public class PlayerController : MonoBehaviour
 {
 
     public GameObject arrowPrefab;
-    public float standardForceMultiplier;
     Vector2 arrowStart;
     Vector2 startingMousePosition;
     Vector2 finalMousePosition;
@@ -31,16 +30,10 @@ public class PlayerController : MonoBehaviour
             Vector2 differenceBetweenPointsVector = startingMousePosition - finalMousePosition;
             float distanceBetweenPoints = differenceBetweenPointsVector.magnitude;
             pressed = false;
-            createArrow(differenceBetweenPointsVector, distanceBetweenPoints);
+            GameObject newArrow = (GameObject)Instantiate(arrowPrefab, arrowStart, Quaternion.identity);
+            newArrow.GetComponent<Arrow>().Shoot(differenceBetweenPointsVector,distanceBetweenPoints,arrowStart);
         }
 
-    }
-
-    void createArrow(Vector2 differenceBetweenPoints,float magnitudeBetweenPoints)
-    {
-        GameObject newArrow = (GameObject)Instantiate(arrowPrefab, arrowStart, Quaternion.identity);
-        Rigidbody2D rb = newArrow.GetComponent<Rigidbody2D>();
-        rb.AddForce(differenceBetweenPoints.normalized * magnitudeBetweenPoints * standardForceMultiplier); //normal do vetor de distancia entre pontos* distancia entre pontos
     }
 
     Vector2 GetMousePosition () //Função para pegar a posição do mouse no atual momento e converter de pixes para posição global
