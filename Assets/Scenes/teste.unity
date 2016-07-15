@@ -162,7 +162,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &547986800
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +266,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100138, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
       propertyPath: m_Name
-      value: Player (1)
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 100138, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}

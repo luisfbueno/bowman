@@ -21,7 +21,7 @@ public class Arrow : MonoBehaviour
 
     public void Shoot(Vector2 differenceBetweenPoints, float magnitudeBetweenPoints, Vector2 arrowStart)
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = gameObject.GetComponentInChildren<Rigidbody2D>();
         rb.AddForce(differenceBetweenPoints.normalized * magnitudeBetweenPoints * standardForceMultiplier); //normal do vetor de distancia entre pontos* distancia entre pontos
     }
 
@@ -41,5 +41,7 @@ public class Arrow : MonoBehaviour
         {
             print("Legs");
         }
+
+        
     }
 }

@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        arrowStart = new Vector2(transform.position.x + 1, transform.position.y + 1); //Precisa implementar metodo de calculo para maior precisão
+        arrowStart = new Vector2(transform.position.x + 1.5f, transform.position.y + 1); //Precisa implementar metodo de calculo para maior precisão
     }
 
     void Update()
@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
             Vector2 differenceBetweenPointsVector = startingMousePosition - finalMousePosition;
             float distanceBetweenPoints = differenceBetweenPointsVector.magnitude;
             pressed = false;
-            GameObject newArrow = (GameObject)Instantiate(arrowPrefab, arrowStart, Quaternion.identity);
+            float angle = Vector3.Angle(new Vector2(1,0), differenceBetweenPointsVector);
+            print(differenceBetweenPointsVector.normalized.x +" "+ differenceBetweenPointsVector.normalized.y + " " + angle);
+            GameObject newArrow = (GameObject)Instantiate(arrowPrefab, arrowStart, Quaternion.Euler(0,0,angle));
             newArrow.GetComponent<Arrow>().Shoot(differenceBetweenPointsVector,distanceBetweenPoints,arrowStart);
         }
 
