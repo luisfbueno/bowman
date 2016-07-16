@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
             pressed = false; //variável a ser usada para desenhar a linha de mira
             float angle = Vector3.Angle(new Vector2(1,0), differenceBetweenPointsVector);
 
-            if (differenceBetweenPointsVector.y < 0)
+            if (differenceBetweenPointsVector.y < 0) //se o vetor normal for abaixo do eixo y, inverter o angulo pois Vector3.angle so da o valor positivo
             {
                 angle = -angle;
             }
