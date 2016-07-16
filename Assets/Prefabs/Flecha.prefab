@@ -172,7 +172,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171270}
   m_UseAutoMass: 0
-  m_Mass: 1.5
+  m_Mass: 1.3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc061c58a7543b045b62d7c4304daa4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardForceMultiplier: 400
+  standardForceMultiplier: 500
   shootingPlayer: {fileID: 0}
 --- !u!255 &25532926
 FixedJoint2D:
