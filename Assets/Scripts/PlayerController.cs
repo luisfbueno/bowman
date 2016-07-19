@@ -8,13 +8,18 @@ public class PlayerController : MonoBehaviour
     Vector2 arrowStart;
     Vector2 startingMousePosition;
     Vector2 finalMousePosition;
-    bool pressed;
+    Vector2 currentMousePosition;
+    private bool pressed;
     int health;
 
     void Start()
     {
-        arrowStart = new Vector2(transform.position.x + 1.5f, transform.position.y + 1); //Precisa implementar metodo de calculo para maior precisão
-        health = 5;
+        if(gameObject.tag == "Player 1") //condições para determinar a posição inicial de lançamento da flecha dependendo do player
+            arrowStart = new Vector2(transform.position.x + 1.5f, transform.position.y + 1); 
+        else if (gameObject.tag == "Player 2")
+            arrowStart = new Vector2(transform.position.x - 1.5f, transform.position.y + 1);
+
+        health = 5; //Determina vida inicial do Player para 5
     }
 
     void Update()
@@ -26,22 +31,35 @@ public class PlayerController : MonoBehaviour
             pressed = true; //variável a ser usada para desenhar a linha de mira
         }
 
+        if (pressed) //se estiver sendo pressionado, salva a posição atual do mouse para usar
+        {
+            currentMousePosition = GetMousePosition();
+        }
+
+
         if(Input.GetMouseButtonUp(0) && pressed) //Pega a posição na qual o mouse foi solto e chama a função de soltar a flecha
         {
-            finalMousePosition = GetMousePosition();
-            Vector2 differenceBetweenPointsVector = startingMousePosition - finalMousePosition;
-            float distanceBetweenPoints = differenceBetweenPointsVector.magnitude;
+            finalMousePosition = GetMousePosition(); //pega a posição final do mouse
+            Vector2 differenceBetweenPointsVector = startingMousePosition - finalMousePosition; //calcula o vetor da diferença entre os dois ponts
+            float distanceBetweenPoints = differenceBetweenPointsVector.magnitude; //guarda o módulo do vetor (magnitude)
             pressed = false; //variável a ser usada para desenhar a linha de mira
-            float angle = Vector3.Angle(new Vector2(1,0), differenceBetweenPointsVector);
+
+            float angle = 0; //variável que guarda o angulo de lançamento de acordo com a posição do vetor feito pelo mouse
+
+            if(gameObject.tag=="Player 1") //condições para determinar angulo dependendo de qual lado o player está jogando
+                angle = Vector3.Angle(new Vector2(1,0), differenceBetweenPointsVector);
+            else if (gameObject.tag == "Player 2")
+                angle = 180f - Vector3.Angle(new Vector2(-1, 0), differenceBetweenPointsVector);
+
+            print(angle + " " + differenceBetweenPointsVector.normalized.x + " " + differenceBetweenPointsVector.normalized.y);
 
             if (differenceBetweenPointsVector.y < 0) //se o vetor normal for abaixo do eixo y, inverter o angulo pois Vector3.angle so da o valor positivo
             {
                 angle = -angle;
             }
 
-            print(differenceBetweenPointsVector.normalized.x +" "+ differenceBetweenPointsVector.normalized.y + " " + angle);
-            GameObject newArrow = (GameObject)Instantiate(arrowPrefab, arrowStart, Quaternion.Euler(0,0,angle));
-            newArrow.GetComponent<Arrow>().Shoot(differenceBetweenPointsVector,distanceBetweenPoints,arrowStart);
+            GameObject newArrow = (GameObject)Instantiate(arrowPrefab, arrowStart, Quaternion.Euler(0,0,angle)); //Instancia flecha
+            newArrow.GetComponent<Arrow>().Shoot(differenceBetweenPointsVector,distanceBetweenPoints,arrowStart); //Adiciona força à flecha
         }
 
     }
@@ -61,4 +79,18 @@ public class PlayerController : MonoBehaviour
         }
     } //função para causar dano ao player e destruir caso a vida chegue a zero
 
+    public bool getPressedBool ()
+    {
+        return pressed;
+    } //retorna variavel boolean pressed
+
+    public Vector2 getStartingMouseVector()
+    {
+        return startingMousePosition;
+    } //retorna vetor de posição inicial do mouse
+
+    public Vector2 getCurrentMouseVector()
+    {
+        return currentMousePosition;
+    } //retorna vetor de posição atual do mouse
 }
