@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Caixas
+  - "C\xE9u"
+  - Bomba
   layers:
   - Default
   - TransparentFX
