@@ -371,7 +371,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 436558, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 29.8
+      value: 29.63
       objectReference: {fileID: 0}
     - target: {fileID: 436558, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
       propertyPath: m_LocalPosition.y
@@ -411,10 +411,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100138, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11416944, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
+      propertyPath: player2AngleFixer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 11492600, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &2049360929
@@ -468,8 +472,12 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11416944, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
+      propertyPath: player2AngleFixer
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 12054970, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
-    - {fileID: 11492600, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
   m_IsPrefabParent: 0

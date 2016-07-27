@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     Vector2 currentMousePosition;
     private bool pressed;
     int health;
+    public float player2AngleFixer;
 
     void Start()
     {
@@ -44,12 +45,12 @@ public class PlayerController : MonoBehaviour
             float distanceBetweenPoints = differenceBetweenPointsVector.magnitude; //guarda o módulo do vetor (magnitude)
             pressed = false; //variável a ser usada para desenhar a linha de mira
 
-            float angle = 0; //variável que guarda o angulo de lançamento de acordo com a posição do vetor feito pelo mouse
-
-            if(gameObject.tag=="Player 1") //condições para determinar angulo dependendo de qual lado o player está jogando
+            float angle = 0;
+                
+            if(gameObject.transform.tag == "Player 1")
                 angle = Vector3.Angle(new Vector2(1,0), differenceBetweenPointsVector);
-            else if (gameObject.tag == "Player 2")
-                angle = 180f - Vector3.Angle(new Vector2(-1, 0), differenceBetweenPointsVector);
+            else if (gameObject.transform.tag == "Player 2")
+                angle = Vector3.Angle(new Vector2(1, 0), differenceBetweenPointsVector) + player2AngleFixer;
 
             print(angle + " " + differenceBetweenPointsVector.normalized.x + " " + differenceBetweenPointsVector.normalized.y);
 
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    Vector2 GetMousePosition () //Função para pegar a posição do mouse no atual momento e converter de pixes para posição global
+    Vector2 GetMousePosition () //Função para pegar a posição do mouse no atual momento e converter de pixels para posição global
     {
         return FindObjectOfType<Camera>().ScreenToWorldPoint(Input.mousePosition);
     }
