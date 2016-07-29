@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4872823, y: 4.3630266, z: 0}
+  m_LocalPosition: {x: -5.8875937, y: -0.19371776, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -254,9 +254,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.041670322, y: 0.008871436}
+  m_Offset: {x: 0.04520464, y: 0.0018017143}
   serializedVersion: 2
-  m_Size: {x: 0.9229515, y: 0.23469067}
+  m_Size: {x: 0.9158821, y: 0.22055125}
 --- !u!114 &11487066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,7 +284,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0.5430303, y: 0}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!1001 &100100000
