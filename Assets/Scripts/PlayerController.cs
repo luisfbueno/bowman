@@ -52,8 +52,6 @@ public class PlayerController : MonoBehaviour
             else if (gameObject.transform.tag == "Player 2")
                 angle = Vector3.Angle(new Vector2(1, 0), differenceBetweenPointsVector) + player2AngleFixer;
 
-            print(angle + " " + differenceBetweenPointsVector.normalized.x + " " + differenceBetweenPointsVector.normalized.y);
-
             if (differenceBetweenPointsVector.y < 0) //se o vetor normal for abaixo do eixo y, inverter o angulo pois Vector3.angle so da o valor positivo
             {
                 angle = -angle;

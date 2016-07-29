@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11416944}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Player 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,8 +86,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.07, y: 2.47, z: 0}
-  m_LocalScale: {x: 1.1550002, y: 3.9910972, z: 1}
+  m_LocalPosition: {x: 4.57, y: 12.54, z: 0}
+  m_LocalScale: {x: 0.96612555, y: 3.043212, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 457342}
@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 181182, guid: b34c0574bbd1c934695d8a3ea181d9e2, type: 2}
+  player2AngleFixer: 3.5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
