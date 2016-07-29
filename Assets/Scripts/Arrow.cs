@@ -6,6 +6,17 @@ public class Arrow : MonoBehaviour
 
     public float standardForceMultiplier;
     public GameObject shootingPlayer;
+    float visibleScreen;
+
+    void Start()
+    {
+        visibleScreen = -Camera.main.orthographicSize - transform.localScale.x;
+    }
+ 
+   void Update ()
+    {
+
+    }
     
     public void Shoot(Vector2 differenceBetweenPoints, float magnitudeBetweenPoints, Vector2 arrowStart)
     {
