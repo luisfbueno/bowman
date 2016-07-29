@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 74932033}
   - 114: {fileID: 74932034}
-  - 114: {fileID: 74932035}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -116,19 +115,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
 --- !u!114 &74932034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 74932032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434a1262452424949a22ae4517bd0f47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1: {fileID: 1447407735}
-  player2: {fileID: 1410991220}
---- !u!114 &74932035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -385,7 +371,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 436558, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 27.28
+      value: 27.17
       objectReference: {fileID: 0}
     - target: {fileID: 436558, guid: bc9722d6fb9a9a34887aced09a9fee24, type: 2}
       propertyPath: m_LocalPosition.y
