@@ -36,6 +36,5 @@ public class GameManager : MonoBehaviour {
     public void AddTurn()
     {
         turnCount++;
-        print(turnCount);
     }
 }

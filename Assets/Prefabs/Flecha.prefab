@@ -32,6 +32,7 @@ GameObject:
   - 23: {fileID: 2374300}
   - 50: {fileID: 5000966}
   - 255: {fileID: 25532926}
+  - 114: {fileID: 11407376}
   m_Layer: 0
   m_Name: Ponta
   m_TagString: Untagged
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.8875937, y: -0.19371776, z: 0}
+  m_LocalPosition: {x: 4.4872, y: 4.363, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -254,9 +255,22 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.04520464, y: 0.0018017143}
+  m_Offset: {x: 0.04167032, y: 0.008871426}
   serializedVersion: 2
-  m_Size: {x: 0.9158821, y: 0.22055125}
+  m_Size: {x: 0.9229515, y: 0.2346907}
+--- !u!114 &11407376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc061c58a7543b045b62d7c4304daa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardForceMultiplier: 0
+  shootingPlayer: {fileID: 0}
 --- !u!114 &11487066
 MonoBehaviour:
   m_ObjectHideFlags: 1
