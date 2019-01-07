@@ -1,3 +1,3 @@
 # Bowman
 
-Bowman Game Development Directory, made in Unity.
+Bowman Game Development Directory, made with Unity.
